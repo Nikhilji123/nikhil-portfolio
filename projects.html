@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Nikhil Varshney</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1>Nikhil <span>Varshney</span></h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="https://drive.google.com/file/d/1GR6tdzxNCYlQW7DC6la7DAirOl8SXgv_/view?usp=sharing" target="_blank">Resume</a>
+        <a href="#" class="hire" id="openPopup">Hire Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section style="margin-bottom: 3rem;">
+      <h2 style="font-size: 1.8rem; color: #00e6e6;">Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h3>Travel Manager System</h3>
+        <p>A web-based system to manage travel bookings and itinerary using MySQL backend.</p>
+        <ul>
+          <li>Frontend: HTML, CSS, JavaScript</li>
+          <li>Backend: PHP, MySQL</li>
+          <li>Tools: VS Code, GitHub, XAMPP</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h3>Guest ManageR</h3>
+        <p>The Guest Management System (GMS) is a software solution designed to manage guests in hotels, events, resorts, etc. It tracks visitors required for scheduled events and entry access.</p>
+        <ul>
+          <li>Duration: Feb 2023 – May 2023</li>
+          <li>Tools: HTML, CSS, Java, PHP, MySQL</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h3>InstaBot - Sentiment Analysis</h3>
+        <p>Detects and manages public sentiments on Instagram posts. Deletes negative comments, shows user profiles, post details, and simulates Instagram interface using AI/ML.</p>
+        <ul>
+          <li>Duration: Sep 2023</li>
+          <li>Tools: Python, Django, Machine Learning</li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Hire Me Popup -->
+  <div class="popup-overlay" id="popup" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; justify-content: center; align-items: center; z-index: 9999;">
+    <div class="popup-card" style="background: white; color: #111; padding: 1.5rem; border-radius: 10px; width: 350px; max-width: 90%; display: flex; align-items: center; gap: 1rem; box-shadow: 0 0 15px #00e6e6;">
+      <div class="popup-left">
+        <img src="https://drive.google.com/uc?export=view&id=1w_ziSQSR23IH1Iv6zhY9B2l5F8bAgDnL" alt="Nikhil" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid #00e6e6;" />
+      </div>
+      <div class="popup-right">
+        <h3 style="margin: 0; color: #6b21a8;">Nikhil <span style="color: #111;">Varshney</span></h3>
+        <p>Email: <a href="mailto:nikhilvarshney123456@gmail.com">nikhilvarshney123456@gmail.com</a></p>
+        <p>Phone: <a href="tel:+918604253300">+91 8604253300</a></p>
+        <button id="closePopup" style="background: none; border: none; color: #6b21a8; font-weight: bold; margin-top: 0.5rem; cursor: pointer;">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.project-card').forEach(card => {
+      card.style.background = '#1a1a1a';
+      card.style.padding = '1rem';
+      card.style.borderRadius = '8px';
+      card.style.marginBottom = '1rem';
+      card.style.transition = 'transform 0.3s';
+      card.addEventListener('mouseenter', () => card.style.transform = 'scale(1.03)');
+      card.addEventListener('mouseleave', () => card.style.transform = 'scale(1)');
+    });
+
+    const popup = document.getElementById('popup');
+    const openBtn = document.getElementById('openPopup');
+    const closeBtn = document.getElementById('closePopup');
+    openBtn.addEventListener('click', e => { e.preventDefault(); popup.style.display = 'flex'; });
+    closeBtn.addEventListener('click', () => popup.style.display = 'none');
+    window.addEventListener('click', e => { if (e.target === popup) popup.style.display = 'none'; });
+  </script>
+</body>
+</html>
